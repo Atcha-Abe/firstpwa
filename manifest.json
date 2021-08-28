@@ -1,21 +1,21 @@
 {
     "name": "PWA workshop",
     "short_name": "PWA example", 
+    "start_url": ".", 
+    "background_color": "#A480D9",
+    "theme_color": "#5A0FC8",
     "display": "standalone",
     "description": "A sample app.",
     "icons": [
         {
-          "src": "/images/Logo192.png",
+          "src": "images/Logo192.png",
           "type": "image/png",
           "sizes": "192x192"
         },
         {
-          "src": "/images/Logo512.png",
+          "src": "images/Logo512.png",
           "type": "image/png",
           "sizes": "512x512"
         }
-      ],
-    "start_url": ".", 
-    "background_color": "#A480D9",
-    "theme_color": "#5A0FC8"
+      ]
 }
