@@ -1,9 +1,14 @@
-<<<<<<< HEAD:sw.js
 self.addEventListener("install", e => {
-    console.log("Install!");
+    e.waitUntil(
+        caches.open("static").then(cache => {
+            return cache.addAll(["./", "./src/style.css", "./images/Logo192.png"]);
+        })
+    );
 });
-=======
-self.addEventListener("install", e => {
-    console.log("Install!");
-});
->>>>>>> 841685f30a45a6737d656f0bcccbb3a47cb0f8db:serviceworker.js
+
+self.addEventListener("fetch", e => {
+    e.responWith(
+        caches.match(e.request).then(response => {
+            return response || fetch(e.request);
+        }))
+})
